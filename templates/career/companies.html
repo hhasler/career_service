@@ -1,0 +1,31 @@
+{% extends 'career/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Career Service uni.li Companies{% endblock %}
+
+{% block body_block %}
+
+    <h1>Companies</h1>
+
+
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Website</th>
+        <th>Number of Job Offers</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for company in companies %}
+      <tr>
+        <td>{{ company.company_name }}</td>
+        <td><a href="{{ company.link_to_website }}">{{ company.link_to_website }}</a></td>
+        <td>{{ company.number }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}

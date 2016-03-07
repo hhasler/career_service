@@ -1,0 +1,50 @@
+{% extends 'career/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Career Service uni.li Joboffers Detail{% endblock %}
+
+{% block body_block %}
+
+    {% if joboffer %}
+        <h1>{{ joboffer.title }}</h1>
+        <table class="table">
+        <tr>
+            <td>Company</td>
+            <td>{{ joboffer.company }}</td>
+        </tr>
+        <tr>
+            <td>Position</td>
+            <td>{{ joboffer.position }}</td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td>{{ joboffer.location }}</td>
+        </tr>
+        <tr>
+            <td>Workload Percentage</td>
+            <td>{{ joboffer.workloadPercentage }} %</td>
+        </tr>
+        <tr>
+            <td>Expectations</td>
+            <td>{{ joboffer.expectations }}</td>
+        </tr>
+        <tr>
+            <td>Requirements</td>
+            <td>{{ joboffer.requirements }}</td>
+        </tr>
+        <tr>
+            <td>PDF</td>
+            <td><a href="/media/{{ joboffer.pdf_file }}">PDF-FILE</a></td>
+        </tr>
+
+        </table>
+
+
+        <br><br>
+        <a href="{% url 'apply' %}" class="btn btn-default">Apply here!</a>
+    {% else %}
+     There is currently no job offer with this id.
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'career/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Career Service uni.li{% endblock %}
+
+{% block body_block %}
+
+    <h3>You are not logged in as a company!</h3> <br>
+     <p>Register as a company <a href="{% url 'registration_register' %}">here</a>!</p>
+
+{% endblock %}

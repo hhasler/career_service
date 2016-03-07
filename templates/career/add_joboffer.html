@@ -1,0 +1,20 @@
+{% extends "career/base.html" %}
+{% load bootstrap3 %}
+{% block body_block %}
+
+
+
+<h1>Add Job Offer</h1>
+
+<form id="add_joboffer" method="post" action="/career/add_joboffer/" enctype="multipart/form-data">
+
+  {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">
+            {% bootstrap_icon "star" %} Submit
+        </button>
+    {% endbuttons %}
+</form>
+
+{% endblock %}

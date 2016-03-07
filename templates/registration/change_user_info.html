@@ -1,0 +1,19 @@
+{% extends "career/base.html" %}
+{% load bootstrap3 %}
+{% block body_block %}
+
+<h1>Profile Information</h1>
+
+{# Display a form #}
+
+<form action="/career/change_user_info/" method="post" class="form" id="change_user_info">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">
+            {% bootstrap_icon "ok" %} Save
+        </button>
+    {% endbuttons %}
+</form>
+
+{% endblock %}

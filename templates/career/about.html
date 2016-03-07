@@ -1,0 +1,13 @@
+{% extends 'career/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Career Service uni.li About{% endblock %}
+
+{% block body_block %}
+
+    <a href={% url 'imprint' %}>Imprint</a></br>
+    <a href={% url 'disclaimer' %}>Disclaimer</a></br>
+    <a href={% url 'privacypolicy' %}>Privacy Policy</a>
+
+{% endblock %}

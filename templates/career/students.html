@@ -1,0 +1,31 @@
+{% extends 'career/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Career Service uni.li Students{% endblock %}
+
+{% block body_block %}
+
+    <h1>Students</h1>
+
+
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Study Program</th>
+        <th>Degree</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for student in students %}
+      <tr>
+        <td>{{ student.student_name }} {{ student.student_surname }}</td>
+        <td>{{ student.student_studyProgram }}</td>
+        <td>{{ student.student_degree }}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "career/base.html" %}
+{% load bootstrap3 %}
+
+{% block body_block %}
+<h1>Login</h1>
+        <form method="post" action=".">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">
+            {% bootstrap_icon "star" %} Submit
+        </button>
+    {% endbuttons %}
+                </form>
+
+        <p>Not  a member? <a href="{% url 'registration_register' %}">Register</a>!</p>
+{% endblock %}

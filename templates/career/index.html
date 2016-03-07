@@ -1,0 +1,20 @@
+{% extends 'career/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Career Service uni.li Homepage{% endblock %}
+
+{% block body_block %}
+
+    {% if user.is_authenticated %}
+        <h1>Career Service-uni.li welcomes you, {{ user.username }}!</h1>
+    {% else %}
+        <h1>Welcome to Career Service-uni.li</h1>
+    {% endif %}
+
+
+    <p>The University of Liechtenstein has developed steadily, and is now an internationally renowned centre of higher education. As such, it offers attractive opportunities for study in the heart of Europe. Our activities focus on imparting knowledge relevant to life, and on exciting, research-led innovation in the field of Architecture and Business Administration on a Bachelor´s degree and Architecture, Entrepreneurship, Finance and Information Systems on a Master´s degree.</p>
+
+    <p>Requests of companies to recruit students directly from our university has grown more and more in the last years. To respond to this demand, careerservice-uni.li is our new website to bring students searching for jobs and companies offering jobs together. </p>
+
+{% endblock %}

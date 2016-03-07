@@ -1,0 +1,28 @@
+{% extends 'career/base.html' %}
+{% load bootstrap3 %}
+
+{% load staticfiles %}
+
+{% block title %}Register to Career Service{% endblock %}
+
+{% block body_block %}
+        <h1>Register with Career</h1>
+
+        {% if registered %}
+        <strong>Thank you for registering!</strong>
+        <a href={% url 'index' %}>Return to the homepage.</a><br />
+        {% else %}
+            <strong>Register here!</strong><br />
+
+        <form id="user_form" method="post" action={% url 'register' %} enctype="multipart/form-data">
+
+            {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">
+            {% bootstrap_icon "star" %} Submit
+        </button>
+    {% endbuttons %}
+        </form>
+        {% endif %}
+{% endblock %}
